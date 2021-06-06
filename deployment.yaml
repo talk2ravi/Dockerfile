@@ -20,7 +20,7 @@ spec:
           containerPort: 80
          volumeMounts:
           - name: config-volume
-            mountPath: /etc/nginx/conf.d
+            mountPath: /etc/nginx
         livenessProbe:
           httpGet:
             path: /
@@ -39,6 +39,6 @@ spec:
         configMap:
           name: nginx-config
           items:
-          - key: reverseproxy.conf
-            path: reverseproxy.conf
+          - key: nginx.conf
+            path: nginx.conf
             
